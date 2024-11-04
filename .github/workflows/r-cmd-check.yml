@@ -17,13 +17,13 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: "4.1"  # or any version you need
-      
-      - name: Install dependencies
+          r-version: "4.1"  # Specify the R version needed
+
+      - name: Install dependencies with renv
         run: |
-          Rscript -e 'install.packages("devtools")'
-          Rscript -e 'devtools::install_deps(dependencies = TRUE)'
-        
+          Rscript -e 'install.packages("renv")'
+          Rscript -e 'renv::restore()'  # Installs packages as specified in renv.lock
+      
       - name: Run testthat tests
         run: |
           Rscript -e 'library(testthat); test_dir("tests/testthat")'
