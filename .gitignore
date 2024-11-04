@@ -3,3 +3,15 @@
 .RData
 .Ruserdata
 .DS_Store
+library/
+local/
+cellar/
+lock/
+python/
+sandbox/
+staging/
+
+.Rprofile
+.Renviron
+
+data/
